@@ -8,7 +8,7 @@ NOTES: These instructions are a mix of Windows and Linux instructions, and so yo
 
 As a user, all you need to do is use the 'gradlew' launcher to execute jmeterEditor task like so:
 
-    [djangofan:/opt/repos/launch-jmeter/] gradlew printBuildScriptClasspath jmeterEditor --info
+    gradlew jmeterEditor --info
 
 Or, you can skip those steps and use the included script ```startJmeterWithGradle.bat``` , but using that script requires that you install Gradle on your system.  I suggest instead that you first try to run the above mentioned command.
 
