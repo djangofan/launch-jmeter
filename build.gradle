@@ -27,6 +27,8 @@ buildscript {
 }
 
 jmeterRun.configure {
+    jmeterTestFiles = [file("src/test/jmeter/test2.jmx")]
+    jmeterUserPropertiesFiles = [file("src/test/jmeter/user.properties")]
     enableReports = true
     jmeterIgnoreFailure = false
     jmeterIgnoreError = false
