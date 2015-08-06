@@ -1,5 +1,14 @@
 # launch-jmeter
 
+## NOTE
+
+This project is only for running with the older Kuly jmeter-gradle-plugin
+
+If you want to run the newer one, see this project instead: https://github.com/jmeter-gradle-plugin/jmeter-gradle-plugin-adv-example
+
+
+## Info
+
 A Maven project to run the latest Jmeter with all plugins included using either Maven or Gradle.  
 
 NOTES: These instructions are a mix of Windows and Linux instructions, and so you need to interpolate.  Getting this project running is as simple as installing Java on your system and then following the instructions below.
