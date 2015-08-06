@@ -9,13 +9,11 @@ buildscript {
     }
     repositories {
         mavenCentral()
+		//mavenLocal()
     }
     dependencies {
         classpath "com.github.kulya:jmeter-gradle-plugin:1.3.4-2.13"
         classpath "org.codehaus.groovy:groovy-all:2.4.3"
-        classpath "com.opencsv:opencsv:3.3"
-        classpath "com.google.guava:guava:18.0"
-        classpath "org.apache.commons:commons-lang3:3.4"
         classpath group: 'kg.apc', name: 'jmeter-plugins-standard', version: pluginsVersion
         classpath group: 'kg.apc', name: 'jmeter-plugins-common', version: pluginsVersion
         classpath group: 'kg.apc', name: 'jmeter-plugins-extras', version: pluginsVersion
@@ -27,6 +25,9 @@ buildscript {
 }
 
 jmeterRun.configure {
+    doFirst{
+        println "See, i can do it."
+    }
     jmeterTestFiles = [file("src/test/jmeter/test2.jmx")]
     jmeterUserPropertiesFiles = [file("src/test/jmeter/user.properties")]
     enableReports = true
@@ -35,10 +36,11 @@ jmeterRun.configure {
 }
 
 jmeterEditor.configure {
+    doFirst{
+        println "See, i can do it."
+    }
     maxHeapSize = "1200M"
-    jmeterPluginJars = ["groovy","guava","opencsv","jmeter-plugins-standard","commons-lang3",
-        "jmeter-plugins-common","jmeter-plugins-extras","jmeter-plugins-extras-libs",
-        "jmeter-plugins-webdriver"]
+    jmeterPluginJars = ["groovy","jmeter-plugins-standard", "jmeter-plugins-common","jmeter-plugins-extras","jmeter-plugins-extras-libs","jmeter-plugins-webdriver"]
 }
 
 task printBuildScriptClasspath << {
@@ -50,8 +52,6 @@ task printBuildScriptClasspath << {
     println "\n"
 }
 
-task syncToLib(type: Sync) {
-    // useful when launching jmeter from TFS.
-    into "gradle-lib"
-    from project.buildscript.configurations.classpath
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
 }
