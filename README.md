@@ -2,7 +2,7 @@
 
 ## NOTE
 
-This project is only for running with the older Kuly jmeter-gradle-plugin
+This project is only for running with the older Kulya jmeter-gradle-plugin
 
 If you want to run the newer one, see this project instead: https://github.com/jmeter-gradle-plugin/jmeter-gradle-plugin-adv-example
 
